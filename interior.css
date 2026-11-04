@@ -106,3 +106,24 @@ body.iskra-interior {
   .iskra-interior .footer-capsule { width: calc(100% - 34px); }
   .iskra-interior .footer-top, .iskra-interior .footer-bottom { flex-wrap: wrap; justify-content: center; text-align: center; }
 }
+
+
+/* Privacy policy reading layout */
+.iskra-interior .privacy-copy { max-width: 900px; }
+.iskra-interior .privacy-copy h2 {
+  margin: 34px 0 8px;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(1.55rem, 2.6vw, 2rem) !important;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+.iskra-interior .privacy-copy h2:first-of-type { margin-top: 28px; }
+.iskra-interior .privacy-copy p { margin: 10px 0 16px; }
+.iskra-interior .privacy-copy a:not(.btn-checkout) {
+  color: #e6c2a8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.iskra-interior .privacy-copy a:not(.btn-checkout):hover { color: #fff; }
+.iskra-interior .privacy-note { color: var(--interior-muted); }
