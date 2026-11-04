@@ -18,11 +18,48 @@
     <div class="header-center"><span class="section-eyebrow">A conversation about what's possible</span><h1 class="section-title">Let's build what moves your business forward.</h1><p class="section-desc">Every engagement begins with a discovery conversation. Tell us where your operations are today, what you want to improve, and where you want to go.</p></div>
     <div class="standards-card">
       <h2>Start the conversation.</h2>
-      <p>Share your requirements with our team or contact us directly at <strong>main@iskraexchange.cc</strong>.</p>
-      <p>The consultation form is being connected. For now, please email us to arrange an introductory session.</p>
-      <a class="btn-checkout" href="mailto:main@iskraexchange.cc?subject=Iskra%20Exchange%20Consultation">Email Iskra Exchange</a>
+      <p>Tell us a little about your business and what you'd like to improve. Our team will use your responses to prepare for an introductory conversation.</p>
+      <div class="tally-form" style="width:100%;min-height:650px;">
+        <iframe
+          data-tally-src="https://tally.so/embed/Qo1xXl?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="700"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Iskra Exchange consultation form"
+          style="width:100%;min-height:650px;border:0;border-radius:3px;">
+        </iframe>
+      </div>
+      <p style="margin-top:22px;font-size:.75rem;">Prefer email? Contact us at <a href="mailto:main@iskraexchange.cc" style="text-decoration:underline;text-underline-offset:3px;">main@iskraexchange.cc</a>.</p>
     </div>
   </main>
   <footer><div class="footer-capsule"><div class="footer-bottom"><span>© 2026 Iskra Exchange LLC</span><a href="mailto:main@iskraexchange.cc">main@iskraexchange.cc</a></div></div></footer>
+  <script>
+    (function () {
+      var d = document;
+      var w = "https://tally.so/widgets/embed.js";
+      var v = function () {
+        if (typeof Tally !== "undefined") {
+          Tally.loadEmbeds();
+        } else {
+          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) {
+            e.src = e.dataset.tallySrc;
+          });
+        }
+      };
+      if (typeof Tally !== "undefined") {
+        v();
+      } else if (!d.querySelector('script[src="' + w + '"]')) {
+        var s = d.createElement("script");
+        s.src = w;
+        s.onload = v;
+        s.onerror = v;
+        s.async = true;
+        d.body.appendChild(s);
+      }
+    })();
+  </script>
 </body>
 </html>
