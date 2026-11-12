@@ -11,8 +11,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="cinema.css" />
+  <script>document.documentElement.classList.add("iskra-loading");</script>
 </head>
 <body class="iskra-cinema">
+  <div class="blackhole-loader" id="blackhole-loader" aria-hidden="true">
+    <div class="blackhole-loader__field">
+      <span class="blackhole-loader__halo"></span>
+      <span class="blackhole-loader__disk"></span>
+      <span class="blackhole-loader__core"></span>
+      <span class="blackhole-loader__flare"></span>
+      <span class="blackhole-loader__particles"></span>
+    </div>
+  </div>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <div class="scene-shell" aria-hidden="true">
@@ -142,6 +152,25 @@
     const menuButton = document.querySelector('.mobile-menu-toggle');
     const menu = document.getElementById('cinema-links');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const loader = document.getElementById('blackhole-loader');
+    if (loader) {
+      const started = performance.now();
+      let dismissed = false;
+      const dismiss = () => {
+        if (dismissed) return;
+        dismissed = true;
+        const minimum = reducedMotion ? 250 : 1900;
+        window.setTimeout(() => {
+          loader.classList.add('is-complete');
+          document.documentElement.classList.remove('iskra-loading');
+          window.setTimeout(() => loader.remove(), 1100);
+        }, Math.max(0, minimum - (performance.now() - started)));
+      };
+      if (document.readyState === 'complete') dismiss();
+      else window.addEventListener('load', dismiss, { once: true });
+      window.setTimeout(dismiss, 5500);
+    }
 
     menuButton.addEventListener('click', () => {
       const open = menuButton.getAttribute('aria-expanded') !== 'true';
